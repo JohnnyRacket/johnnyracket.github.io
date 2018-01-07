@@ -1,0 +1,130 @@
+.project{
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid black;
+    max-height: 20rem;
+    overflow: hidden;
+    
+}
+
+@supports not (grid-gap: 4rem) {
+    .project{
+        margin: 2rem;
+    }
+}
+
+.project-img-wrapper{
+    position: relative;
+}
+
+.project-img{
+    position: absolute;
+    min-height: 15rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.project:hover{
+    padding-top: 0;
+}
+
+.project-title-box{
+    display: flex;
+    min-height: 3rem;
+    border-top: 1px solid black;
+    margin-top: 17rem;
+    padding: 1rem 0;
+    transition: ease 200ms;
+    z-index: 2;
+    background: white;
+    align-items: center;
+}
+
+.project-title{
+    font-weight: bold;
+    font-size: 2rem;    
+}
+
+.project-preview{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    display: flex;
+    height: 15rem;
+    background: white;
+    z-index: 2;
+    word-wrap: break-word;
+}
+
+.project-preview-description{
+
+}
+
+.project-link{
+    margin-top: 1rem;
+}
+
+.project:hover{
+    padding-top: 2rem;
+}
+
+.project:focus{
+    padding-top: 2rem;
+}
+
+.project:active{
+    padding-top: 2rem;
+}
+
+.project:hover .project-title-box{
+    margin: 0;
+    transition: ease 250ms;
+}
+
+.project:focus .project-title-box{
+    margin: 0;
+    transition: ease 250ms;
+}
+
+.project:active .project-title-box{
+    margin: 0;
+    transition: ease 250ms;
+}
+
+
+
+
+
+
+@media screen and (max-width: 500px)
+{
+    .project{
+        max-height: 25rem;
+        height: 25rem;
+        overflow: hidden;
+    }
+    .project-preview{
+        height: auto;
+    }
+    .project-preview-description{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        min-height: 5rem;
+    }
+
+    .project:hover .project-preview-description{
+        overflow: auto;
+        text-overflow: auto;
+        white-space: normal;
+        height: auto;
+    }
+    
+    
+}

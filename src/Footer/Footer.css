@@ -1,0 +1,37 @@
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 2rem -1rem;
+    flex-wrap: wrap;
+}
+
+.Footer-item{
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+
+.Footer-item:hover{
+    border-bottom: 1px solid black;
+}
+
+.Footer-item--logo{
+    height: 1rem;
+    margin-right: .5rem; 
+}
+
+
+@media screen and (max-width: 500px)
+{
+    .Footer{
+        max-width: 300px;
+    }
+}
+
+
+

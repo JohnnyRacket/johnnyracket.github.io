@@ -1,0 +1,18 @@
+.game{
+    min-width: 320px;
+    height: 480px;
+    border: 4px black solid;
+}
+
+.game-canvas{
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 900px)
+{
+    .game{
+        width: 320px;
+        margin: 0 auto;
+    }
+}

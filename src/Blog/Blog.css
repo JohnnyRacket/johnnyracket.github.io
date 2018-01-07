@@ -1,0 +1,21 @@
+.blog{
+    
+    
+}
+.blog .content{
+    display: flex;
+    flex-direction: column;
+}
+.blog .title{
+    text-align: left;
+    font-size: 3rem;
+    font-weight: bolder;
+    margin: 2rem 0;
+}
+
+
+
+@media screen and (max-width: 900px)
+{
+
+}
