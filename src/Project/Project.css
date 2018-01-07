@@ -10,9 +10,9 @@
     
 }
 
-@supports not (grid-gap: 4rem) {
+@supports not (display: grid) {
     .project{
-        margin: 2rem;
+        margin: 2rem 0;
     }
 }
 
