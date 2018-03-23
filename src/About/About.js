@@ -9,21 +9,21 @@ export default function About (props){
             <div className="content">
                 <div className="description">
                 
-                    I grew up in the golden ages of flash games and as a child I always wanted to make one. 
-                    To me it was the coolest thing that you had all these games that obviously (in most cases) a single person had made. 
-                    My whole childhood I spent wanting learn ActionScript and make my own flash game. I learned enough to make of of those "don't let your mouse touch the wall" type games, but never anything serious.
+                    I grew up in the golden ages of flash games as a child and I always wanted to make one. 
+                    To me, the fact that all these games were so simple but so fun is what drew me in. 
+                    I always wanted to learn ActionScript and make my own flash game. I tried a couple times, but I only learned enough to make of of those "don't let your mouse touch the wall" type games. I distinctly remember being very confused on the concept of loops, which as it turns out, is pretty core to games!
                     <br/><br/>
-                    So after spending a year as a microbiology major in college, I turned to look at other majors because I wasn't dead set on pre-health, and found myself once again enchanted with the idea that I could make things if I could code. 
-                    I have never looked back on the decision (to switch to CS) and making things has been what I have loved doing ever since! 
-                    A funny story I like to tell is that as an avid Runescape player in my early days I could type incredibly fast with two fingers, especially from "merching" stuff. But feeling devoted to learning to code, I forced myself to learn how to type correctly before fully switching my major because I thought it would be absurd to be a programmer that "hunts and pecks". 
+                    In college I spent a year as a microbiology major, I knew almost immediately that lots of school was now for me. So I started looking around at other majors and found myself once again enchanted with the idea that I could make things if I could code. 
+                    I have never looked back on the decision to switch to computer science and making things has been what I have loved doing ever since! 
+                    A funny story I like to tell is that as an avid Runescape player in my early days I could type incredibly fast with two fingers, especially from "merching" stuff. But feeling devoted to learning to code, I had to force myself to learn how to type correctly before fully switching my major because I thought it would be absurd to be a programmer that "hunts and pecks". 
                     <br/><br/>
-                    College was a blur of learning and experiences (one of the most memorable being winning my schools hackathon, SwampHacks 2015). 
-                    Afterwards I went out into the workforce and I've been learning while creating different systems and applications.
+                    College was great and I learned a ton of knowledge from some great professors and accomplished some cool things. One of the most memorable being winning my schools hackathon, SwampHacks 2015. 
+                    Afterwards, I went out into the workforce, and somewhat ironically, I do just as much learning now as I did in college.
                     <br/><br/>
                     My curiosity and want to know more leads me to reading a lot more than I used to. 
-                    I am never done learning, and as a result, I love exploring and implementing; from microservice architectures, cqrs event sourcing systems, building game engines and games from scratch and other really cool stuff!
+                    I am never done learning, and as a result, I love exploring and implementing; from microservice architectures, event sourcing systems, to building game engines and games from scratch I am always on a project.
                     <br/><br/>
-                    <strong>Anyways, enough about me, enjoy the HTML5/Typescript game I built from scratch to fufill my childhood goals!<br/> <a href="https://github.com/JohnnyRacket/playmaker" target="_blank">https://github.com/JohnnyRacket/playmaker</a></strong>
+                    <strong>Anyways, enough about me, enjoy the HTML5/Typescript game I built from scratch to fufill some of my goals!<br/> <a href="https://github.com/JohnnyRacket/playmaker" target="_blank">https://github.com/JohnnyRacket/playmaker</a></strong>
                 </div>
 
                 <Game/>
