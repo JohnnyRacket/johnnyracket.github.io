@@ -42,7 +42,7 @@ export default function About(props) {
                 <div className="grid-item">
                     <div className="grid-item--title"> Languages &amp; Tools </div>
                     <div className="grid-item--item"> C#, Javascript + Typescript, Java, Python </div>
-                    <div className="grid-item--item"> Azure, Serverless </div>
+                    <div className="grid-item--item"> Azure, Serverless, Kubernetes, Docker </div>
                     <div className="grid-item--item"> React, React Native, Angularjs, Node </div>
                 </div>
                 <div className="grid-item">
