@@ -19,12 +19,17 @@
 }
 .Intro-picture{
     display: flex;
+    flex-direction: column;
     overflow: hidden;
+    padding-left: 3rem;
 }
 .Intro-picture--pic{
-    max-width: 25rem;
+    max-width: 20rem;
     align-self: center;
     
+}
+.Intro-pciture--subtext{
+    font-size: 12px;
 }
 .Intro-text-bold{
     font-weight: bolder;
@@ -52,6 +57,10 @@
 
     .Intro-text-statement{
         margin: 4rem 0;
+    }
+
+    .Intro-picture{
+        padding-left: 0;
     }
 
 
