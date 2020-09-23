@@ -1,13 +1,14 @@
 {
-  "main.css": "static/css/main.ccf27f7b.css",
-  "main.css.map": "static/css/main.ccf27f7b.css.map",
-  "main.js": "static/js/main.258448ed.js",
-  "main.js.map": "static/js/main.258448ed.js.map",
+  "main.css": "static/css/main.e1a1c1f5.css",
+  "main.css.map": "static/css/main.e1a1c1f5.css.map",
+  "main.js": "static/js/main.812cc058.js",
+  "main.js.map": "static/js/main.812cc058.js.map",
   "static/media/exxon.png": "static/media/exxon.29246240.png",
   "static/media/facebook.svg": "static/media/facebook.74f5a502.svg",
   "static/media/florida.png": "static/media/florida.7e0feaba.png",
   "static/media/github.svg": "static/media/github.ea8bb7f4.svg",
   "static/media/gmail.svg": "static/media/gmail.e5a7e7a9.svg",
   "static/media/linkedin.svg": "static/media/linkedin.bc8e55bb.svg",
-  "static/media/selfie4.png": "static/media/selfie4.1a24dd99.png"
+  "static/media/selfie4.png": "static/media/selfie4.1a24dd99.png",
+  "static/media/sketch3.png": "static/media/sketch3.25033bfe.png"
 }
