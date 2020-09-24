@@ -394,7 +394,7 @@ module.exports = root;
 Object.defineProperty(exports, "__esModule", { value: true });
 var ReferenceManager_1 = __webpack_require__(99);
 var array = __webpack_require__(27);
-var RenderEngine = /** @class */ (function () {
+var RenderEngine = (function () {
     function RenderEngine() {
         this.observers = [];
         this.services = [];
@@ -552,13 +552,10 @@ var reIsUint = /^(?:0|[1-9]\d*)$/;
  * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
  */
 function isIndex(value, length) {
-  var type = typeof value;
   length = length == null ? MAX_SAFE_INTEGER : length;
-
   return !!length &&
-    (type == 'number' ||
-      (type != 'symbol' && reIsUint.test(value))) &&
-        (value > -1 && value % 1 == 0 && value < length);
+    (typeof value == 'number' || reIsUint.test(value)) &&
+    (value > -1 && value % 1 == 0 && value < length);
 }
 
 module.exports = isIndex;
@@ -718,7 +715,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var DoubleBufferedViewObject_1 = __webpack_require__(26);
-var ClickableViewObject = /** @class */ (function (_super) {
+var ClickableViewObject = (function (_super) {
     __extends(ClickableViewObject, _super);
     function ClickableViewObject(x, y, width, height, angle, drawingStrategy, clickStrategy, callback) {
         var _this = _super.call(this, x, y, width, height, angle, drawingStrategy) || this;
@@ -784,7 +781,7 @@ var array = __webpack_require__(27);
 /*
 * This class is a Singleton
 */
-var GameEngine = /** @class */ (function () {
+var GameEngine = (function () {
     function GameEngine() {
         this.isRunning = false;
         this.observers = [];
@@ -875,7 +872,7 @@ exports.GameEngine = GameEngine;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var MapObject_1 = __webpack_require__(109);
-var GameMap = /** @class */ (function () {
+var GameMap = (function () {
     function GameMap() {
         //private objects: [string, Coordinate];
         this.objects = [];
@@ -1178,7 +1175,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComposableViewObject_1 = __webpack_require__(98);
-var DoubleBufferedViewObject = /** @class */ (function (_super) {
+var DoubleBufferedViewObject = (function (_super) {
     __extends(DoubleBufferedViewObject, _super);
     function DoubleBufferedViewObject(x, y, width, height, angle, strategy) {
         var _this = _super.call(this) || this;
@@ -1667,7 +1664,7 @@ module.exports = baseSortedIndex;
 Object.defineProperty(exports, "__esModule", { value: true });
 var MatchTemplater_1 = __webpack_require__(61);
 var array = __webpack_require__(27);
-var ScoreKeeper = /** @class */ (function () {
+var ScoreKeeper = (function () {
     function ScoreKeeper() {
         this._score = 0;
         this._hiscore = 0;
@@ -1762,7 +1759,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var PositionableGameObject_1 = __webpack_require__(111);
-var CollidableGameObject = /** @class */ (function (_super) {
+var CollidableGameObject = (function (_super) {
     __extends(CollidableGameObject, _super);
     function CollidableGameObject(x, y, width, height, type) {
         var _this = _super.call(this, x, y, width, height) || this;
@@ -2369,14 +2366,11 @@ var nativeFloor = Math.floor,
  *  into `array`.
  */
 function baseSortedIndexBy(array, value, iteratee, retHighest) {
-  var low = 0,
-      high = array == null ? 0 : array.length;
-  if (high === 0) {
-    return 0;
-  }
-
   value = iteratee(value);
-  var valIsNaN = value !== value,
+
+  var low = 0,
+      high = array == null ? 0 : array.length,
+      valIsNaN = value !== value,
       valIsNull = value === null,
       valIsSymbol = isSymbol(value),
       valIsUndefined = value === undefined;
@@ -2530,7 +2524,7 @@ var RouteDrawingStageVisitor_1 = __webpack_require__(266);
 var RightLockPositioningDecorator_1 = __webpack_require__(270);
 var ScoreKeeper_1 = __webpack_require__(40);
 var LogoViewObject_1 = __webpack_require__(103);
-var MatchTemplater = /** @class */ (function () {
+var MatchTemplater = (function () {
     function MatchTemplater(gameView, playerFactory, playerVOFactory, fieldFactory, clickManager, collisionManager) {
         this.messages = [];
         this.blockers = [];
@@ -2919,7 +2913,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ClickableViewObject_1 = __webpack_require__(16);
-var PositioningDecorator = /** @class */ (function (_super) {
+var PositioningDecorator = (function (_super) {
     __extends(PositioningDecorator, _super);
     function PositioningDecorator(view) {
         var _this = _super.call(this, view.x, view.y, view.width, view.y, view.angle, view.drawingStrategy, view.clickStrategy, view.callback) || this;
@@ -3004,7 +2998,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var PositioningDecorator_1 = __webpack_require__(62);
-var HorizontalCenterPositioningDecorator = /** @class */ (function (_super) {
+var HorizontalCenterPositioningDecorator = (function (_super) {
     __extends(HorizontalCenterPositioningDecorator, _super);
     function HorizontalCenterPositioningDecorator() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3043,7 +3037,7 @@ exports.HorizontalCenterPositioningDecorator = HorizontalCenterPositioningDecora
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var TopLeftDrawingStrategy = /** @class */ (function () {
+var TopLeftDrawingStrategy = (function () {
     function TopLeftDrawingStrategy() {
     }
     TopLeftDrawingStrategy.prototype.calculateGlobalPositionXEffect = function (width) {
@@ -3067,7 +3061,7 @@ exports.TopLeftDrawingStrategy = TopLeftDrawingStrategy;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Coordinate = /** @class */ (function () {
+var Coordinate = (function () {
     function Coordinate(x, y) {
         this.x = x;
         this.y = y;
@@ -3096,7 +3090,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Controller_1 = __webpack_require__(106);
 var Coordinate_1 = __webpack_require__(65);
-var RouteController = /** @class */ (function (_super) {
+var RouteController = (function (_super) {
     __extends(RouteController, _super);
     //more to come, need ot think through collisions first
     function RouteController(subject, route, collisionManager) {
@@ -3173,7 +3167,7 @@ exports.RouteController = RouteController;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Dimensionable = /** @class */ (function () {
+var Dimensionable = (function () {
     function Dimensionable() {
     }
     Object.defineProperty(Dimensionable.prototype, "x", {
@@ -3557,11 +3551,10 @@ function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
   if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
     return false;
   }
-  // Check that cyclic values are equal.
-  var arrStacked = stack.get(array);
-  var othStacked = stack.get(other);
-  if (arrStacked && othStacked) {
-    return arrStacked == other && othStacked == array;
+  // Assume cyclic values are equal.
+  var stacked = stack.get(array);
+  if (stacked && stack.get(other)) {
+    return stacked == other;
   }
   var index = -1,
       result = true,
@@ -4206,7 +4199,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var RenderEngine_1 = __webpack_require__(10);
 var Dimensionable_1 = __webpack_require__(67);
-var ComposableViewObject = /** @class */ (function (_super) {
+var ComposableViewObject = (function (_super) {
     __extends(ComposableViewObject, _super);
     function ComposableViewObject() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -4256,7 +4249,7 @@ exports.ComposableViewObject = ComposableViewObject;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var StagedReference_1 = __webpack_require__(263);
-var ReferenceManager = /** @class */ (function () {
+var ReferenceManager = (function () {
     function ReferenceManager() {
         this.stagedReferences = [];
     }
@@ -4302,7 +4295,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ClickableViewObject_1 = __webpack_require__(16);
-var StickerTextViewObject = /** @class */ (function (_super) {
+var StickerTextViewObject = (function (_super) {
     __extends(StickerTextViewObject, _super);
     function StickerTextViewObject(x, y, width, height, angle, drawingStratgegy, clickStrategy, callback, text) {
         var _this = _super.call(this, x, y, width, height, angle, drawingStratgegy, clickStrategy, callback) || this;
@@ -4401,7 +4394,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ClickableViewObject_1 = __webpack_require__(16);
-var ButtonViewObject = /** @class */ (function (_super) {
+var ButtonViewObject = (function (_super) {
     __extends(ButtonViewObject, _super);
     function ButtonViewObject(x, y, width, height, angle, drawingStrategy, clickStrategy, text, callback) {
         var _this = _super.call(this, x, y, width, height, angle, drawingStrategy, clickStrategy, callback) || this;
@@ -4466,7 +4459,7 @@ exports.ButtonViewObject = ButtonViewObject;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Route = /** @class */ (function () {
+var Route = (function () {
     //want to add a length value as well
     function Route(path) {
         this.points = path;
@@ -4498,7 +4491,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ClickableViewObject_1 = __webpack_require__(16);
-var LogoViewObject = /** @class */ (function (_super) {
+var LogoViewObject = (function (_super) {
     __extends(LogoViewObject, _super);
     function LogoViewObject(x, y, width, height, angle, drawingStratgegy, clickStrategy, callback, text) {
         var _this = _super.call(this, x, y, width, height, angle, drawingStratgegy, clickStrategy, callback) || this;
@@ -4581,7 +4574,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComposableView_1 = __webpack_require__(105);
-var ComposableViewDecorator = /** @class */ (function (_super) {
+var ComposableViewDecorator = (function (_super) {
     __extends(ComposableViewDecorator, _super);
     function ComposableViewDecorator(view) {
         var _this = _super.call(this, view.x, view.y, view.width, view.height) || this;
@@ -4666,7 +4659,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComposableViewObject_1 = __webpack_require__(98);
-var ComposableView = /** @class */ (function (_super) {
+var ComposableView = (function (_super) {
     __extends(ComposableView, _super);
     // get x(){
     //     return this._x * RenderEngine.getInstance().scale;
@@ -4747,7 +4740,7 @@ exports.ComposableView = ComposableView;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Controller = /** @class */ (function () {
+var Controller = (function () {
     function Controller(subject) {
         this.active = true;
         this.colliding = false;
@@ -4905,7 +4898,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var GameMap_1 = __webpack_require__(18);
 var Endzone_1 = __webpack_require__(110);
 var Wall_1 = __webpack_require__(271);
-var FieldFactory = /** @class */ (function () {
+var FieldFactory = (function () {
     function FieldFactory(hitboxFactory, controllerFactory) {
         this.hitBoxFactory = hitboxFactory;
         this.controllerFactory = controllerFactory;
@@ -4935,7 +4928,7 @@ exports.FieldFactory = FieldFactory;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var MapObject = /** @class */ (function () {
+var MapObject = (function () {
     function MapObject(object, type) {
         this.object = object;
         this.type = type;
@@ -4964,7 +4957,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var CollidableGameObject_1 = __webpack_require__(41);
 var ScoreKeeper_1 = __webpack_require__(40);
-var Endzone = /** @class */ (function (_super) {
+var Endzone = (function (_super) {
     __extends(Endzone, _super);
     function Endzone() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -5000,7 +4993,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ObservableGameObject_1 = __webpack_require__(112);
-var PositionableGameObject = /** @class */ (function (_super) {
+var PositionableGameObject = (function (_super) {
     __extends(PositionableGameObject, _super);
     function PositionableGameObject(x, y, width, height) {
         var _this = _super.call(this) || this;
@@ -5053,7 +5046,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Dimensionable_1 = __webpack_require__(67);
 var array = __webpack_require__(27);
-var ObservableGameObject = /** @class */ (function (_super) {
+var ObservableGameObject = (function (_super) {
     __extends(ObservableGameObject, _super);
     function ObservableGameObject() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -6872,11 +6865,10 @@ function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
       return false;
     }
   }
-  // Check that cyclic values are equal.
-  var objStacked = stack.get(object);
-  var othStacked = stack.get(other);
-  if (objStacked && othStacked) {
-    return objStacked == other && othStacked == object;
+  // Assume cyclic values are equal.
+  var stacked = stack.get(object);
+  if (stacked && stack.get(other)) {
+    return stacked == other;
   }
   var result = true;
   stack.set(object, other);
@@ -7202,14 +7194,6 @@ var freeProcess = moduleExports && freeGlobal.process;
 /** Used to access faster Node.js helpers. */
 var nodeUtil = (function() {
   try {
-    // Use `util.types` for Node.js 10+.
-    var types = freeModule && freeModule.require && freeModule.require('util').types;
-
-    if (types) {
-      return types;
-    }
-
-    // Legacy `process.binding('util')` for Node.js < 10.
     return freeProcess && freeProcess.binding && freeProcess.binding('util');
   } catch (e) {}
 }());
@@ -7490,7 +7474,8 @@ module.exports = baseMatchesProperty;
 var memoizeCapped = __webpack_require__(184);
 
 /** Used to match property names within property paths. */
-var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+var reLeadingDot = /^\./,
+    rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
 
 /** Used to match backslashes in property paths. */
 var reEscapeChar = /\\(\\)?/g;
@@ -7504,11 +7489,11 @@ var reEscapeChar = /\\(\\)?/g;
  */
 var stringToPath = memoizeCapped(function(string) {
   var result = [];
-  if (string.charCodeAt(0) === 46 /* . */) {
+  if (reLeadingDot.test(string)) {
     result.push('');
   }
-  string.replace(rePropName, function(match, number, quote, subString) {
-    result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
+  string.replace(rePropName, function(match, number, quote, string) {
+    result.push(quote ? string.replace(reEscapeChar, '$1') : (number || match));
   });
   return result;
 });
@@ -10432,10 +10417,6 @@ function baseSet(object, path, value, customizer) {
     var key = toKey(path[index]),
         newValue = value;
 
-    if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
-      return object;
-    }
-
     if (index != lastIndex) {
       var objValue = nested[key];
       newValue = customizer ? customizer(objValue, key, nested) : undefined;
@@ -10510,7 +10491,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var PositioningDecorator_1 = __webpack_require__(62);
-var BottomLockPositioningDecorator = /** @class */ (function (_super) {
+var BottomLockPositioningDecorator = (function (_super) {
     __extends(BottomLockPositioningDecorator, _super);
     function BottomLockPositioningDecorator(view, bottomPadding) {
         var _this = _super.call(this, view) || this;
@@ -10551,7 +10532,7 @@ exports.BottomLockPositioningDecorator = BottomLockPositioningDecorator;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var StagedReference = /** @class */ (function () {
+var StagedReference = (function () {
     function StagedReference(object, stage) {
         this.object = object;
         this.stage = stage;
@@ -10580,7 +10561,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var ClickableViewObject_1 = __webpack_require__(16);
 var ScoreKeeper_1 = __webpack_require__(40);
-var ScoreViewObject = /** @class */ (function (_super) {
+var ScoreViewObject = (function (_super) {
     __extends(ScoreViewObject, _super);
     function ScoreViewObject(x, y, width, height, angle, drawingStratgegy, clickStrategy, callback) {
         var _this = _super.call(this, x, y, width, height, angle, drawingStratgegy, clickStrategy, callback) || this;
@@ -10626,7 +10607,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var DoubleBufferedViewObject_1 = __webpack_require__(26);
-var DebugViewObject = /** @class */ (function (_super) {
+var DebugViewObject = (function (_super) {
     __extends(DebugViewObject, _super);
     function DebugViewObject(x, y, width, height, angle, subject, strategy) {
         var _this = _super.call(this, x, y, width, height, angle, strategy) || this;
@@ -10681,7 +10662,7 @@ exports.DebugViewObject = DebugViewObject;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var DrawRouteClickStrategy_1 = __webpack_require__(267);
-var RouteDrawingStageVisitor = /** @class */ (function () {
+var RouteDrawingStageVisitor = (function () {
     function RouteDrawingStageVisitor(clickManager, gameArea) {
         this.clickManager = clickManager;
         this.gameArea = gameArea;
@@ -10724,7 +10705,7 @@ var Coordinate_1 = __webpack_require__(65);
 var ClickStrategy_1 = __webpack_require__(269);
 var Route_1 = __webpack_require__(102);
 var TopLeftDrawingStrategy_1 = __webpack_require__(64);
-var DrawRouteClickStrategy = /** @class */ (function (_super) {
+var DrawRouteClickStrategy = (function (_super) {
     __extends(DrawRouteClickStrategy, _super);
     function DrawRouteClickStrategy(clickableManager, gameArea) {
         var _this = _super.call(this) || this;
@@ -10787,7 +10768,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var DoubleBufferedViewObject_1 = __webpack_require__(26);
-var RouteViewObject = /** @class */ (function (_super) {
+var RouteViewObject = (function (_super) {
     __extends(RouteViewObject, _super);
     function RouteViewObject() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -10795,7 +10776,7 @@ var RouteViewObject = /** @class */ (function (_super) {
         return _this;
     }
     RouteViewObject.prototype.preRender = function () {
-        if (this.route && this.route.length > 1) { //literal typescript bug imo
+        if (this.route && this.route.length > 1) {
             this.context.beginPath();
             this.context.moveTo(this.route[0].x, this.route[0].y);
             this.context.strokeStyle = "#ffff00";
@@ -10828,7 +10809,7 @@ exports.RouteViewObject = RouteViewObject;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ClickStrategy = /** @class */ (function () {
+var ClickStrategy = (function () {
     function ClickStrategy() {
     }
     return ClickStrategy;
@@ -10854,7 +10835,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var PositioningDecorator_1 = __webpack_require__(62);
-var RightLockPositioningDecorator = /** @class */ (function (_super) {
+var RightLockPositioningDecorator = (function (_super) {
     __extends(RightLockPositioningDecorator, _super);
     function RightLockPositioningDecorator(view, rightPadding) {
         var _this = _super.call(this, view) || this;
@@ -10906,7 +10887,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var CollidableGameObject_1 = __webpack_require__(41);
-var Wall = /** @class */ (function (_super) {
+var Wall = (function (_super) {
     __extends(Wall, _super);
     function Wall() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -10931,7 +10912,7 @@ exports.Wall = Wall;
 Object.defineProperty(exports, "__esModule", { value: true });
 var RenderEngine_1 = __webpack_require__(10);
 var MatchTemplater_1 = __webpack_require__(61);
-var FindMatchClickStrategy = /** @class */ (function () {
+var FindMatchClickStrategy = (function () {
     function FindMatchClickStrategy() {
     }
     FindMatchClickStrategy.prototype.execute = function (object) {
@@ -10955,21 +10936,18 @@ exports.FindMatchClickStrategy = FindMatchClickStrategy;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var RenderEngine_1 = __webpack_require__(10);
-var ClickableManager = /** @class */ (function () {
+var ClickableManager = (function () {
     function ClickableManager(canvas) {
         var _this = this;
         this.clickables = [];
         this.canvas = canvas;
         canvas.addEventListener('click', function (evt) {
-            evt.preventDefault();
             _this.clickEvents(evt);
         }, false);
         canvas.addEventListener('touchstart', function (evt) {
-            evt.preventDefault();
             _this.mouseDownEvents(evt);
         }, false);
         canvas.addEventListener('touchend', function (evt) {
-            evt.preventDefault();
             _this.mouseUpEvents(evt);
         }, false);
         // canvas.addEventListener('mouseover', (evt) => {
@@ -11069,7 +11047,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ClickableViewObject_1 = __webpack_require__(16);
-var PauseViewObject = /** @class */ (function (_super) {
+var PauseViewObject = (function (_super) {
     __extends(PauseViewObject, _super);
     function PauseViewObject() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -11102,7 +11080,7 @@ exports.PauseViewObject = PauseViewObject;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var GameEngine_1 = __webpack_require__(17);
-var PauseGameClickStrategy = /** @class */ (function () {
+var PauseGameClickStrategy = (function () {
     function PauseGameClickStrategy() {
     }
     PauseGameClickStrategy.prototype.execute = function (object) {
@@ -11132,7 +11110,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComposableViewDecorator_1 = __webpack_require__(104);
 var RenderEngine_1 = __webpack_require__(10);
-var HorizontalCenterDecorator = /** @class */ (function (_super) {
+var HorizontalCenterDecorator = (function (_super) {
     __extends(HorizontalCenterDecorator, _super);
     function HorizontalCenterDecorator() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -11155,7 +11133,7 @@ exports.HorizontalCenterDecorator = HorizontalCenterDecorator;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Hitbox_1 = __webpack_require__(278);
-var HitBoxFactory = /** @class */ (function () {
+var HitBoxFactory = (function () {
     function HitBoxFactory(collisionManager) {
         this.collisionManager = collisionManager;
     }
@@ -11185,7 +11163,7 @@ exports.HitBoxFactory = HitBoxFactory;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Hitbox = /** @class */ (function () {
+var Hitbox = (function () {
     function Hitbox(width, height, subject) {
         this._width = width;
         this._height = height;
@@ -11253,7 +11231,7 @@ var BlockerController_1 = __webpack_require__(281);
 var GameEngine_1 = __webpack_require__(17);
 var InputController_1 = __webpack_require__(283);
 var RouteController_1 = __webpack_require__(66);
-var ControllerFactory = /** @class */ (function () {
+var ControllerFactory = (function () {
     function ControllerFactory(collisionManager, clickableManager) {
         this.collisionManager = collisionManager;
         this.clickableManager = clickableManager;
@@ -11304,7 +11282,7 @@ var ScoreKeeper_1 = __webpack_require__(40);
 var GameEngine_1 = __webpack_require__(17);
 var GameMap_1 = __webpack_require__(18);
 var RouteController_1 = __webpack_require__(66);
-var DefenderController = /** @class */ (function (_super) {
+var DefenderController = (function (_super) {
     __extends(DefenderController, _super);
     function DefenderController() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -11385,7 +11363,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var GameMap_1 = __webpack_require__(18);
 var RouteController_1 = __webpack_require__(66);
 var BlockerHivemind_1 = __webpack_require__(282);
-var BlockerController = /** @class */ (function (_super) {
+var BlockerController = (function (_super) {
     __extends(BlockerController, _super);
     function BlockerController() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -11451,7 +11429,7 @@ exports.BlockerController = BlockerController;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var BlockerHivemind = /** @class */ (function () {
+var BlockerHivemind = (function () {
     function BlockerHivemind() {
         this.blocks = [];
         if (BlockerHivemind._instance) {
@@ -11526,7 +11504,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var GameMap_1 = __webpack_require__(18);
 var Controller_1 = __webpack_require__(106);
 var TouchPlayHandler_1 = __webpack_require__(284);
-var InputController = /** @class */ (function (_super) {
+var InputController = (function (_super) {
     __extends(InputController, _super);
     function InputController(subject, collisionManager, clickableManager) {
         var _this = _super.call(this, subject) || this;
@@ -11550,19 +11528,19 @@ var InputController = /** @class */ (function (_super) {
         return _this;
     }
     InputController.prototype.onKeyDown = function (keyCode) {
-        if (keyCode == 37) { //left
+        if (keyCode == 37) {
             this.left = true;
         }
-        if (keyCode == 39) { //right
+        if (keyCode == 39) {
             this.right = true;
         }
     };
     InputController.prototype.onKeyUp = function (keyCode) {
-        if (keyCode == 37) { //left
+        if (keyCode == 37) {
             this.left = false;
             this.releasedLeft = 3;
         }
-        if (keyCode == 39) { //right
+        if (keyCode == 39) {
             this.right = false;
             this.releasedRight = 3;
         }
@@ -11602,7 +11580,7 @@ var InputController = /** @class */ (function (_super) {
     InputController.prototype.act = function () {
         //console.log(this.jump);
         if (this.jumpLeft > 0 || this.jumpRight > 0) {
-            if (this.jumpLeft > 0) { //jump left
+            if (this.jumpLeft > 0) {
                 var angle = this.subject.angle - (60 * Math.PI / 180);
                 if (!this.collisionManager.collisionCheckAtPosition(this.subject, this.subject.x + this.subject.speed * Math.cos(this.subject.angle), this.subject.y)
                     && !this.collisionManager.wallCollisionCheckAtPosition(this.subject, this.subject.x + this.subject.speed * Math.cos(this.subject.angle), this.subject.y)) {
@@ -11614,7 +11592,7 @@ var InputController = /** @class */ (function (_super) {
                 }
                 this.jumpLeft--;
             }
-            if (this.jumpRight > 0) { //jump right
+            if (this.jumpRight > 0) {
                 var angle = this.subject.angle + (60 * Math.PI / 180);
                 if (!this.collisionManager.collisionCheckAtPosition(this.subject, this.subject.x + this.subject.speed * Math.cos(this.subject.angle), this.subject.y)
                     && !this.collisionManager.wallCollisionCheckAtPosition(this.subject, this.subject.x + this.subject.speed * Math.cos(this.subject.angle), this.subject.y)) {
@@ -11670,16 +11648,16 @@ exports.InputController = InputController;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var TouchPlayHandler = /** @class */ (function () {
+var TouchPlayHandler = (function () {
     function TouchPlayHandler(inputController) {
         this.inputController = inputController;
     }
     TouchPlayHandler.prototype.handleClick = function (x, y) {
-        //console.log(event);
+        console.log(event);
         //do nothing
     };
     TouchPlayHandler.prototype.handleMouseDown = function (x, y) {
-        //console.log(event);
+        console.log(event);
         if (x > 160) {
             this.inputController.onKeyDown(39);
         }
@@ -11703,7 +11681,7 @@ exports.TouchPlayHandler = TouchPlayHandler;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var CollisionManager = /** @class */ (function () {
+var CollisionManager = (function () {
     function CollisionManager() {
         this.activeCollidables = [];
         this.passiveCollidables = [];
@@ -11865,7 +11843,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var GameMap_1 = __webpack_require__(18);
 var GameEngine_1 = __webpack_require__(17);
 var Player_1 = __webpack_require__(287);
-var PlayerFactory = /** @class */ (function () {
+var PlayerFactory = (function () {
     function PlayerFactory(hitboxFactory, controllerFactory) {
         this.hitBoxFactory = hitboxFactory;
         this.controllerFactory = controllerFactory;
@@ -11934,7 +11912,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ControllableGameObeject_1 = __webpack_require__(288);
-var Player = /** @class */ (function (_super) {
+var Player = (function (_super) {
     __extends(Player, _super);
     function Player() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -11973,7 +11951,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var GameEngine_1 = __webpack_require__(17);
 var CollidableGameObject_1 = __webpack_require__(41);
-var ControllableGameObject = /** @class */ (function (_super) {
+var ControllableGameObject = (function (_super) {
     __extends(ControllableGameObject, _super);
     function ControllableGameObject(x, y, width, height, type, speed) {
         var _this = _super.call(this, x, y, width, height, type) || this;
@@ -12030,7 +12008,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var DoubleBufferedViewObject_1 = __webpack_require__(26);
-var FieldViewObject = /** @class */ (function (_super) {
+var FieldViewObject = (function (_super) {
     __extends(FieldViewObject, _super);
     function FieldViewObject() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -12100,7 +12078,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var RenderEngine_1 = __webpack_require__(10);
 var ComposableViewDecorator_1 = __webpack_require__(104);
-var VerticalCenterDecorator = /** @class */ (function (_super) {
+var VerticalCenterDecorator = (function (_super) {
     __extends(VerticalCenterDecorator, _super);
     function VerticalCenterDecorator() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -12125,7 +12103,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var CenterDrawingStrategy_1 = __webpack_require__(292);
 var SquarePlayerViewObject_1 = __webpack_require__(293);
 var AbilityDots_1 = __webpack_require__(294);
-var PlayerViewObjectFactory = /** @class */ (function () {
+var PlayerViewObjectFactory = (function () {
     function PlayerViewObjectFactory() {
     }
     PlayerViewObjectFactory.prototype.CreateRunnerInArea = function (runner, area) {
@@ -12168,7 +12146,7 @@ exports.PlayerViewObjectFactory = PlayerViewObjectFactory;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var CenterDrawingStrategy = /** @class */ (function () {
+var CenterDrawingStrategy = (function () {
     function CenterDrawingStrategy() {
     }
     CenterDrawingStrategy.prototype.calculateGlobalPositionXEffect = function (width) {
@@ -12203,7 +12181,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var ClickableViewObject_1 = __webpack_require__(16);
-var SquarePlayerViewObject = /** @class */ (function (_super) {
+var SquarePlayerViewObject = (function (_super) {
     __extends(SquarePlayerViewObject, _super);
     function SquarePlayerViewObject(x, y, width, height, angle, subject, strategy) {
         var _this = _super.call(this, x, y, width, height, angle, strategy, null, null) || this;
@@ -12292,7 +12270,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var DoubleBufferedViewObject_1 = __webpack_require__(26);
-var AbilityDots = /** @class */ (function (_super) {
+var AbilityDots = (function (_super) {
     __extends(AbilityDots, _super);
     function AbilityDots(x, y, width, height, angle, drawingStrategy, subject) {
         var _this = _super.call(this, x, y, width, height, angle, drawingStrategy) || this;

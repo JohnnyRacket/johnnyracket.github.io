@@ -13,10 +13,11 @@ import BlogPost from './BlogPost/BlogPost';
 
 import projects from './Projects/projects.json';
 import posts from './Blog/posts.json';
+import Resume from './Resume/Resume';
 
 
 export default class App extends Component {
-  componentDidMount(){
+  componentDidMount() {
     document.title = "John Harrison"
   }
 
@@ -25,20 +26,20 @@ export default class App extends Component {
       <HashRouter>
         <div className="App">
           <div className="Container">
-            <NavBar/>
-            
-
-
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/projects" render={(props) => (<Projects projects={projects}/>)}/>
-            <Route exact path="/blog" render={(props) => (<Blog posts={posts}/>)}/>
-            <Route path="/blog/post/:id" component={BlogPost}/>
-            <Route path="/history" component={History}/>
+            <NavBar />
 
 
 
-            <Footer/>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/projects" render={(props) => (<Projects projects={projects} />)} />
+            <Route exact path="/resume" render={(props) => (<Resume />)} />
+            {/* <Route path="/blog/post/:id" component={BlogPost}/> */}
+            <Route path="/history" component={History} />
+
+
+
+            <Footer />
           </div>
         </div>
       </HashRouter>

@@ -1,0 +1,21 @@
+.resume{
+    
+    
+}
+.resume .content{
+    display: flex;
+    flex-direction: column;
+}
+.resume .title{
+    text-align: left;
+    font-size: 3rem;
+    font-weight: bolder;
+    margin: 2rem 0;
+}
+
+
+
+@media screen and (max-width: 900px)
+{
+
+}

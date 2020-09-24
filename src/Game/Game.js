@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Game.css';
 
-export default class Game extends Component{
+export default class Game extends Component {
     componentDidMount() {
         // let elysian = require('elysian');
         // console.log(elysian);
@@ -12,14 +12,14 @@ export default class Game extends Component{
         script.async = true;
         document.body.appendChild(script);
     }
-   
-    render(){
-        return(
+
+    render() {
+        return (
             <div>
                 <div id="canvasWrapper" className="game">
                     <canvas id="myCanvas" className="game-canvas"></canvas>
                 </div>
-            <div>&larr; arrow keys to turn &rarr;, double tap to juke</div>
+                <div className="unselectable">&larr; arrow keys to turn &rarr;, double tap to juke</div>
             </div>
         );
     }

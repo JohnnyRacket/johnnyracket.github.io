@@ -30,7 +30,7 @@ export default function About(props) {
                 <Game />
             </div>
 
-            <div className="grid">
+            {/* <div className="grid">
                 <div className="grid-item">
                     <div className="grid-item--title"> Interests/Skills </div>
                     <div className="grid-item--item"> System Architecture </div>
@@ -53,7 +53,7 @@ export default function About(props) {
                     <div className="grid-item--item"> SwampHacks 2015 1st Place </div>
                     <div className="grid-item--item"> Eagle Scout </div>
                 </div>
-            </div>
+            </div> */}
 
         </div>
     );
