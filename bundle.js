@@ -11679,7 +11679,7 @@ var TouchPlayHandler = /** @class */ (function () {
         //do nothing
     };
     TouchPlayHandler.prototype.handleMouseDown = function (x, y) {
-        //console.log(event);
+        console.log(event);
         if (x > 160) {
             this.inputController.onKeyDown(39);
         }
