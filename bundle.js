@@ -11010,10 +11010,21 @@ var ClickableManager = /** @class */ (function () {
         var rect = this.canvas.getBoundingClientRect();
         if (!event.targetTouches[0].clientX)
             return;
+        console.log('uhhh', this.scale);
+        console.log(event.targetTouches[0].clientX, rect.left);
         var x = (event.targetTouches[0].clientX - rect.left) / this.scale;
         var y = (event.targetTouches[0].clientY - rect.top) / this.scale;
+        console.log(x, y);
         if (this.clickInterceptor)
             this.clickInterceptor.handleMouseDown(x, y);
+        this.clickables.forEach(function (obj, index) {
+            if (x >= obj.getGlobalX() && x <= (obj.getGlobalX() + obj.getWidth()) &&
+                y >= obj.getGlobalY() && y <= (obj.getGlobalY() + obj.getHeight())) {
+                console.log("click match found ", obj);
+                obj.click();
+            }
+            ;
+        });
     };
     ClickableManager.prototype.clickEvents = function (event) {
         console.log(event.offsetX, event.offsetY);
