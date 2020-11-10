@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Intro.css';
-import selfie from './selfie4.png';
-import sketch from './sketch3.png';
+import sketch from './sketch4.png';
 
 export default function Intro(props) {
     return (
@@ -12,7 +11,7 @@ export default function Intro(props) {
             </div>
             <div className="Intro-picture">
                 <img className="Intro-picture--pic" src={sketch} />
-                <span className="Intro-pciture--subtext">(self portrait)</span>
+                {/* <span className="Intro-pciture--subtext">(self portrait)</span> */}
             </div>
         </div>
     );
